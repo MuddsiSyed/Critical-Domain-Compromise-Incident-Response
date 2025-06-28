@@ -151,7 +151,7 @@ This incident represents a critical security breach with complete domain comprom
 
 The incident response demonstrated effective detection, containment, and forensic analysis capabilities, providing valuable experience and documentation for future security operations.
 
-**Prepared by**: SOC Analyst - Cybersecurity Development Project  
+**Prepared by**: Syed Muddassir  
 **Report Date**: June 24, 2025  
 **Next Review**: Post-remediation assessment required
 
