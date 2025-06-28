@@ -149,13 +149,13 @@ External threat actor **186.10.23.226** successfully exploited misconfigured AWS
 ### Pre-Containment Evidence
 The attack was initially discovered through AWS Security Group analysis and Windows Event Log examination.
 
-![Security Groups Pre-Containment](01_Pre_Containment_Evidence/Security%20Group%20Pre-Containment%201.png)
+![Security Group Pre-Containment 1](https://github.com/user-attachments/assets/cc0272ff-65ae-4ae1-a8bd-7aa7fbf08132)
 *AWS Security Group configuration showing complete internet exposure (0.0.0.0/0)*
 
-![Failed Login Events](01_Pre_Containment_Evidence/Real%20Attack%20Same%20IP%204625%20Events.png)
+![Real Attack Same IP 4625 Events](https://github.com/user-attachments/assets/f25675ca-93bd-48b1-8fea-932d65b5ec83)
 *Windows Event ID 4625 showing massive failed login attempts from external IP*
 
-![Successful Login Details](01_Pre_Containment_Evidence/Real%20Attack%20Same%20IP%204624%20Event%20Sample%20Details.png)
+![Real Attack Same IP 4624 Event Sample Details](https://github.com/user-attachments/assets/66b4dc03-3b5e-4eaf-9b13-3e4e74acb683)
 *Successful ANONYMOUS LOGON event details revealing compromise methodology*
 
 ### Detailed Forensic Analysis
@@ -173,13 +173,13 @@ index="endpoint" EventCode=4625 | stats count by Source_Network_Address | sort -
 
 #### Phase 2: Attack Timeline Reconstruction
 
-![Attack Timeline](02_Attack_Analysis/ANONYMOUS%20LOGON%20Attack%20Timeline:%20Sustained%20Unauthorized%20Access%20Pattern.png)
+![ANONYMOUS LOGON Attack Timeline: Sustained Unauthorized Access Pattern](https://github.com/user-attachments/assets/1434c59a-73e4-4a74-a305-d6c5092aabea)
 *Complete attack timeline showing sustained unauthorized access pattern*
 
-![Critical Privilege Escalation](02_Attack_Analysis/CRITICAL:%20Anonymous%20Attacker%20Domain%20Privilege%20Escalation%20Sequence.png)
+![CRITICAL: Anonymous Attacker Domain Privilege Escalation Sequence](https://github.com/user-attachments/assets/c061a4cb-ed55-4dd3-b0d3-49bfe67acf8e)
 *Critical evidence of privilege escalation to Domain Admin by external threat actor*
 
-![Domain Takeover Timeline](02_Attack_Analysis/Domain%20Takeover%20Timeline:%20Complete%20Attack%20Progression.png)
+![Domain Takeover Timeline: Complete Attack Progression](https://github.com/user-attachments/assets/608deaf2-351a-40ba-b64d-4457b5e45494)
 *Complete domain takeover progression from initial access to administrative control*
 
 **Attack Pattern Analysis**:
@@ -195,10 +195,10 @@ index="endpoint" EventCode=4625 Source_Network_Address="186.10.23.226"
 
 #### Phase 3: Privilege Escalation (Critical)
 
-![Compromise Assessment](02_Attack_Analysis/Compromise%20Assessment:%20External%20IP%20Successful%20Authentication%20by%20Account.png)
+![Compromise Assessment: External IP Successful Authentication by Account](https://github.com/user-attachments/assets/e2a60eed-39a9-469c-945e-d6c04cadd328)
 *Assessment showing successful external authentication by compromised accounts*
 
-![Damage Assessment](02_Attack_Analysis/Damage%20Assessment%20from%20krbtgt%20Account.png)
+![Damage Assessment from krbtgt Account](https://github.com/user-attachments/assets/79dfc142-7400-4687-80b6-7baa247706bd)
 *Critical: Damage assessment revealing krbtgt account compromise*
 
 **Persistence Hunting Query**:
@@ -212,7 +212,7 @@ index="endpoint" (EventCode=4720 OR EventCode=4728 OR EventCode=4732)
 - **Event 4732**: Accounts added to Domain Admins group
 - **Event 4728**: Security group memberships modified
 
-![Persistence Hunt Evidence](02_Attack_Analysis/Persistence%20Hunt%20(Account%20Changes,%20New%20Accounts,%20or%20Privilege%20Escalations).png)
+![Persistence Hunt (Account Changes, New Accounts, or Privilege Escalations)](https://github.com/user-attachments/assets/3c81d3bb-b3fc-450f-ae27-ace581862e72)
 *Comprehensive persistence hunting showing account changes and privilege escalations*
 
 ### Kerberos Infrastructure Compromise
@@ -235,10 +235,10 @@ index="endpoint" (EventCode=4720 OR EventCode=4728 OR EventCode=4732)
 
 ### Detection and Investigation
 
-![External Threat Landscape](02_Attack_Analysis/External%20Threat%20Landscape.png)
+![External Threat Landscape](https://github.com/user-attachments/assets/1e2639cb-9722-4aea-abe0-b095edc66d1b)
 *Analysis of external threat landscape and attack origins*
 
-![Legitimate vs Malicious Traffic](02_Attack_Analysis/Legitimate%20vs%20Malicious%20Traffic%20Analysis.png)
+![Legitimate vs Malicious Traffic Analysis](https://github.com/user-attachments/assets/156a7f26-ba3f-46d4-b66c-d38f32e6f730)
 *Traffic analysis distinguishing legitimate operations from malicious activity*
 
 **Initial Discovery Process**:
@@ -249,10 +249,10 @@ index="endpoint" (EventCode=4720 OR EventCode=4728 OR EventCode=4732)
 
 ### Immediate Containment Actions
 
-![Network Isolation](03_Containment_Actions/Immediate%20Containment:%20Removed%20Internet%20Access%20to%20All%20Services.png)
+![Immediate Containment: Removed Internet Access to All Services](https://github.com/user-attachments/assets/373abf48-bc22-46fc-82c4-89b183451325)
 *Immediate containment: Removed internet access to all services*
 
-![Explicit IP Block](03_Containment_Actions/Explicit%20Block%20for%20the%20Attacker%20on%20Network%20ACL.png)
+![Explicit Block for the Attacker on Network ACL](https://github.com/user-attachments/assets/a0173398-330c-48ab-8a50-01374c5687b5)
 *Explicit block implemented for attacker IP on Network ACL*
 
 **Immediate Response (Within 2 hours of discovery)**:
@@ -263,10 +263,10 @@ index="endpoint" (EventCode=4720 OR EventCode=4728 OR EventCode=4732)
 
 ### Forensic Investigation
 
-![No File Sharing Discovered](02_Attack_Analysis/No%20File%20Sharing%20Discovered.png)
+![No File Sharing Discovered](https://github.com/user-attachments/assets/4cdd7b31-a0fa-4bb3-b87e-03c13d95c932)
 *Investigation results showing no file sharing or data exfiltration activity*
 
-![Damage Assessment No Results](Damage%20Assessment%20(No%20Results).png)
+![Damage Assessment (No Results)](https://github.com/user-attachments/assets/c8719d50-55ea-46f0-8485-29253ba9f4bb)
 *Comprehensive damage assessment confirming no additional compromise beyond documented activities*
 
 **Evidence Collection**:
@@ -292,12 +292,6 @@ index="endpoint" (EventCode=4720 OR EventCode=4728 OR EventCode=4732)
 - **Attack Vector Analysis**: ANONYMOUS LOGON exploitation methodology
 - **Timeline Reconstruction**: Minute-by-minute attack progression
 - **Lessons Learned**: Security architecture and response improvements
-
-### Professional Portfolio Content
-**[LinkedIn Professional Showcase](linkedin_post.md)**
-- **Skills Demonstration**: Advanced threat hunting and digital forensics
-- **Real-World Experience**: Professional incident response under pressure
-- **Community Contribution**: Threat intelligence sharing and security awareness
 
 ---
 
