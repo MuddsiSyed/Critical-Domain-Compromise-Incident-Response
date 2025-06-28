@@ -149,7 +149,7 @@ External threat actor **186.10.23.226** successfully exploited misconfigured AWS
 ### Pre-Containment Evidence
 The attack was initially discovered through AWS Security Group analysis and Windows Event Log examination.
 
-![Security Group Pre-Containment 1](https://github.com/user-attachments/assets/cc0272ff-65ae-4ae1-a8bd-7aa7fbf08132)
+![Security Group Pre-Containment 1](https://github.com/user-attachments/assets/cc0272ff-65ae-4ae1-a8bd-7aa7fbf08132) </br>
 *AWS Security Group configuration showing complete internet exposure (0.0.0.0/0)*
 
 ![Real Attack Same IP 4625 Events](https://github.com/user-attachments/assets/f25675ca-93bd-48b1-8fea-932d65b5ec83)
