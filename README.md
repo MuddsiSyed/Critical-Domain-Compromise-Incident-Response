@@ -36,7 +36,6 @@ External threat actor **186.10.23.226** successfully exploited misconfigured AWS
 - [🏗️ Technical Environment](#️-technical-environment)
 - [🔍 Attack Analysis](#-attack-analysis)
 - [🛡️ Incident Response Process](#️-incident-response-process)
-- [🖼️ Evidence Gallery](#️-evidence-gallery)
 - [📄 Professional Documentation](#-professional-documentation)
 - [🎯 Skills Demonstrated](#-skills-demonstrated)
 - [📈 Lessons Learned](#-lessons-learned)
